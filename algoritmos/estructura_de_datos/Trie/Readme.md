@@ -17,6 +17,7 @@ Inicialmente se tiene un trie vacío que consiste de un único nodo: la raíz.
 ## [Temas]
 - [Trie Array](https://github.com/Cami7102/Algoritmica-2/blob/main/algoritmos/estructura_de_datos/Trie/trie_array)
 - [Trie Mapa](https://github.com/Cami7102/Algoritmica-2/blob/main/algoritmos/estructura_de_datos/Trie/trie_map)
+- [Ejercicio Find Prefix Common](https://github.com/Cami7102/Algoritmica-2/blob/main/algoritmos/estructura_de_datos/Trie/ejer_find_prefix_common)
 
 ## [Bibliografia]
 - [Que es?](http://wiki.oia.unsam.edu.ar/algoritmos-oia/trie)
