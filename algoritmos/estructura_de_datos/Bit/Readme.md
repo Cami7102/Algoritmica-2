@@ -7,8 +7,11 @@ Trie a un árbol con raíz donde cada arco está etiquetado con un carácter, y 
 Las operaciones básicas de todo diccionario son:
 
 Insertar(clave, valor) : asocia el valor a la clave
+
 Buscar(clave) : devuelve el valor asociado a la clave (o indica que no se encuentra)
+
 Eliminar(clave) : elimina la entrada
+
 Inicialmente se tiene un trie vacío que consiste de un único nodo: la raíz.
 
 ## [Temas]
