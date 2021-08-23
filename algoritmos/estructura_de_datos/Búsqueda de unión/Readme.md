@@ -15,4 +15,5 @@ La idea consiste en que todos los nodos dentro de una componente conexa tengan l
 
 ## [Bibliografia]
 -[Que es?](https://jariasf.wordpress.com/2012/04/02/disjoint-set-union-find/#:~:text=Union%20Find%20es%20una%20estructura%20de%20datos%20que,elementos%20est%C3%A1n%20o%20no%20en%20el%20mismo%20conjunto.)
+
 -[Datos](https://chococontest.wordpress.com/2011/01/05/union-find/)
