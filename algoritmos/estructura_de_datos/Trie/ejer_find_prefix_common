@@ -1,0 +1,50 @@
+#include <bits/stdc++.h>
+#define input freopen("in.txt", "r", stdin)
+#define output freopen("out.txt", "w", stdout)
+using namespace std;
+
+int numberOfNodes = 0;
+
+struct node{
+    map<char, node*> mapa;
+    bool isWord = false;                
+} *trie;
+
+void init(){
+    trie = new node();
+    numberOfNodes++;
+}
+
+void insertWord(string word){
+    node *currentNode = trie;  
+    for (int i = 0; i < word.length(); i++){
+        if(currentNode->mapa.find(word[i]) == currentNode->mapa.end()){
+            currentNode->mapa[word[i]] = new node();
+        }
+        currentNode = currentNode->mapa[word[i]];
+    }
+    currentNode->isWord=true;
+}
+
+string findPrefixCommon(){
+    node *currentNode = trie; // me posicion
+    string prefix = "";
+    while(currentNode->mapa.size() == 1 && !currentNode->isWord){ // tamaño del mapa, cuantos nodos o prefijos tiene
+        prefix += currentNode->mapa.begin()->first;
+        currentNode = currentNode->mapa.begin()->second;
+    }
+    return prefix;
+}
+
+int main() {
+    // Inicializar Trie
+    init(); 
+    string word = "ala";
+    insertWord(word);
+    word = "alan";
+    insertWord(word);
+    word = "alambrito";   
+    insertWord(word);
+    cout<<findPrefixCommon;
+    return 0;
+}
