@@ -12,4 +12,4 @@ El enfoque de programación dinámica (DP) consiste en dividir el problema en su
 ## [Bibliografia]
 - [Que es?](https://medium.com/@sim017bawkar/introduction-to-digit-dp-40f0e6c9a77d)
 
--[Datos](https://medium.com/@sachinhegde0411/digit-dynamic-programming-c526dbfcbd74)
+- [Datos](https://medium.com/@sachinhegde0411/digit-dynamic-programming-c526dbfcbd74)
