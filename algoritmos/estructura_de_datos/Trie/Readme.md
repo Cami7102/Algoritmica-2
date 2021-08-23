@@ -15,7 +15,8 @@ Eliminar(clave) : elimina la entrada
 Inicialmente se tiene un trie vacío que consiste de un único nodo: la raíz.
 
 ## [Temas]
-- [Bit](https://github.com/Cami7102/Algoritmica-2/blob/main/algoritmos/estructura_de_datos/Bit/bit)
+- [Trie Array](https://github.com/Cami7102/Algoritmica-2/blob/main/algoritmos/estructura_de_datos/Trie/trie_array)
+- [Trie Mapa](https://github.com/Cami7102/Algoritmica-2/blob/main/algoritmos/estructura_de_datos/Trie/trie_map)
 
 ## [Bibliografia]
 - [Que es?](http://wiki.oia.unsam.edu.ar/algoritmos-oia/trie)
