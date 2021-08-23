@@ -8,7 +8,6 @@ Es una forma de cuantificar cu√°n diferentes son dos cadenas (palabras) entre s√
 
 ## [Temas]
 - [Edit Distance TD](https://github.com/Cami7102/Algoritmica-2/blob/main/algoritmos/programacion_dinamica/Editar%20distancia/edit_distance_TD)
-- [Edit Distance BU]()
 
 ## [Bibliografia]
 - [Que es?](https://en.wikipedia.org/wiki/Edit_distance)
