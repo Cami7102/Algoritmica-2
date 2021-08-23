@@ -6,6 +6,9 @@ Es una estructura de datos que nos permite almacenar información en forma de in
 
 El árbol se construye recursivamente: a partir de los valores de los nodos hijos se determina el valor del nodo padre a partir de en qué índice se toma un valor menor.
 
+## [Temas]
+- [Segment Tree](https://github.com/Cami7102/Algoritmica-2/blob/main/algoritmos/estructura_de_datos/%C3%81rbol%20de%20segmentos/segment_tree)
+
 ## [Bibliografia]
 - [Arbol de Segmentos](https://prodeportiva.wordpress.com/2013/02/08/segment-trees/#:~:text=El%20Segment%20Tree%20%28o%20%C3%A1rbol%20de%20intervalos%29%20es,siguientes%20operaciones%20sobre%20la%20informaci%C3%B3n%20de%20los%20intervalos%3A)
 - [Datos](https://aprende.olimpiada-informatica.org/algoritmia-arboles-segmentos-1)
