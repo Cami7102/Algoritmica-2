@@ -1,0 +1,43 @@
+#include <bits/stdc++.h> 
+#define input freopen("in.txt", "r", stdin)
+#define output freopen("out.txt", "w", stdout)
+using namespace std; 
+
+int bit[10000];
+int tamanhoVector;
+
+void update(int posicion, int valor ) { //Sirve para crear o actualizar el "bit", nos pasan las posiciones y valores 
+    for(;posicion <= tamanhoVector ;posicion += posicion&-posicion) {
+        bit[posicion] += valor;                                      
+    }                                                                
+}
+
+int query(int posicion){                       
+    int result = 0 ;
+    for(;posicion > 0 ;posicion -= posicion&-posicion) {        
+        result += bit[posicion];
+    }
+    return result;
+}
+
+int query2(int inicio, int final) {
+    return query(final)-query(inicio-1);
+}
+
+int main() {
+    int queries;
+    cin>>tamanhoVector>>queries;
+    for(int i=0;i<tamanhoVector;i++) {
+        int x;cin>>x;
+        update(i+1, x);
+    }
+    for(int i =0 ;i<= tamanhoVector; i++){
+        cout<<"["<< bit[i]<<"]";
+    }
+    cout<<endl;
+    while(queries--) {
+        int x,y; cin>>x>>y;
+        cout<<query2(x,y)<<endl;
+    }
+    return 0;
+}
