@@ -4,7 +4,7 @@ En matemáticas, un número primo es un número natural mayor que 1 que tiene ú
 ![image](https://user-images.githubusercontent.com/80707476/132241264-c6ca3c61-acd5-44d7-a1a6-34bc644e44b2.png)
 
 ## [Temas]
-- [Primos]()
+- [Primos](https://github.com/Cami7102/Algoritmica-2/blob/main/algoritmos/Teoria%20de%20Numeros/Primos)
 
 ## [Bibliografia]
 - [Numeros Primos](https://es.wikipedia.org/wiki/N%C3%BAmero_primo#:~:text=En%20matem%C3%A1ticas%2C%20un%20n%C3%BAmero%20primo,por%20lo%20tanto%2C%20pueden%20factorizarse.)
