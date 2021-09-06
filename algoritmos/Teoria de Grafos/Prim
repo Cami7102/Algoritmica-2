@@ -1,0 +1,70 @@
+#include <bits/stdc++.h> 
+#define input freopen("in.txt", "r", stdin)
+#define output freopen("out.txt", "w", stdout)
+// Variables
+#define MAX 10000    // Maximo numero de vertices o nodos
+
+using namespace std;
+
+void matriz(int A[][MAX],int n){ //Se ingresa la matriz nxn
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j < n; j++){
+            cin>>A[i][j];
+        }
+    }
+}
+
+void cambio(int A[][MAX],int n){ // ¡¡¡¡funcion para generar la matriz de costos final!!!!
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j < n; j++){
+            if(A[j][i] != 0){
+            A[i][j] = A[j][i];
+            }
+        }
+    }
+
+}
+
+void ini(int A[MAX], int B[MAX], int n){// se inicializan las variables en 0 para no tener problemas de calculo
+    for(int i = 0; i < n; i++){
+        A[i] = 0; B[i] = 0;
+    }
+}
+int largoA(int A[MAX],int n){ // función la cual es usada para determinar el largo de B. ( B es donde se ubican los vertices )
+    int sum = 0;
+    for(int i = 0; i < n; i++){
+        if(A[i] != 0){
+            sum += 1;
+        }
+    }
+    if(sum == 0)
+        return 1;
+    else
+        return sum + 1;
+}
+void ceros(int A[][MAX],int x,int y,int n,int num){ // Esta función hace cero los A[x][i] 
+//( la fila de x )!!! SE PUEDE AGREGAR OTRO MATRIZ, INICIALIZADA EN 0, E IR COLOCANDO LOS VALORES CORRESPONDIENTES EN X E Y.
+        for(int i = 0; i < n; i++){
+            A[x][i] = 0;
+        }
+}
+
+int prim(int A[][MAX],int n,int B[MAX],int C[MAX],int x,int y, int num,int Otro[][MAX]){ /* // Se ingresa la Matriz de costos, un arreglo B para 
+//guardar los caminos mínimos, un arreglo C para guardar los vértices "usados", variables X e Y para guardar posición, y un CTA para que las variables no se sobreescriban.*/
+    int j = 0, MIN = 100000000, h = 0;
+    for(h = C[j]; j < largoA(C, n); j++){//función LargoA, retorna 1 si son sólo ceros, de lo contrario retornará el largo del arreglo C (+ 1 ).
+        h = C[j];
+       for(int i = 0; i < n; i++){
+            if(A[i][h] <= MIN && A[i][h] != 0){
+                MIN = A[i][h];
+                x = i;
+                y = h;
+            }
+       }
+    }
+    B[num - 1] = MIN;
+    Otro[x][y] = B[num - 1];
+    C[0] = 0;
+    C[num] = x;
+    ceros(A, x, y, n, num);
+}
