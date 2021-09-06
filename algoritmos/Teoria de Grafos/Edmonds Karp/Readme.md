@@ -21,7 +21,7 @@ La complejidad se puede dar independientemente del flujo máximo. El algoritmo s
 ![image](https://user-images.githubusercontent.com/80707476/132238884-cc225267-648f-488f-9b77-192909a19176.png)
 
 ## [Temas]
-- [Edmonds Karp]()
+- [Edmonds Karp](https://github.com/Cami7102/Algoritmica-2/blob/main/algoritmos/Teoria%20de%20Grafos/Edmonds%20Karp/Edmonds%20Karp)
 ## [Bibliografia]
 - [Max Flow - Edmonds Karp](https://cp-algorithms.com/graph/edmonds_karp.html)
 - [Video](https://www.youtube.com/watch?v=RppuJYwlcI8)
