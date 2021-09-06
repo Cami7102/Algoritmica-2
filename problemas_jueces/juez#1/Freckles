@@ -1,0 +1,84 @@
+#include <iostream.h>
+#include <math.h>
+#include <iomanip.h>
+
+struct sPoint{
+    double x, y;
+};
+
+struct edgenode{
+    int head, end;
+};
+
+const int MAXN = 101, MAXE = 5000;
+double edge[MAXE];
+sPoint freckle[MAXN];
+edgenode EdgeOrder[MAXE];
+double distance(sPoint p1, sPoint p2);
+void sortEdge(int EdgeNum);
+double MiniSpanTree_Kruskal( int vertexNum, int edgeNum );
+
+int main(){
+    int cn, n, i, j, EdgeNum=0;
+    double ans=0;
+    cin>>cn;
+    while( cn--){
+        cin>>n;
+        i=0;
+        while( i<n ) cin>>freckle.x>>freckle.y, i++;
+            if( n==1 ){
+                if( cn == 0 ) cout<<"0.00"<<endl;
+                else cout<<"0.00"<<endl<<endl;
+                continue;
+    }
+    EdgeNum = 0; 
+    for(i=0; i<n-1; i++)
+    for(j=i+1; j<n; j++){
+        edge[EdgeNum] = distance(freckle, freckle[j]);
+        EdgeOrder[EdgeNum].head = j, EdgeOrder[EdgeNum].end = i;
+        EdgeNum++;
+    }
+    ans = MiniSpanTree_Kruskal( n, EdgeNum );
+    cout.setf(ios::fixed);
+    if( cn==0 ) cout<<setprecision(2)<<ans<<endl;
+    else cout<<setprecision(2)<<ans<<endl<<endl;
+    }
+    return 0;
+    }
+    double distance(sPoint p1, sPoint p2){
+        return sqrt( pow(p1.x - p2.x, 2) + pow(p1.y - p2.y, 2) );
+    }
+    void sortEdge( int len ){
+        int i, j, tmphead, tmpend;
+        bool order = false;
+        double tmp;
+        for(i=1; i<len && !order; ++i){
+            order = true;
+            for(j=0; j<len-i; ++j){
+                if( edge[j] > edge[j+1] ){
+                    tmp = edge[j+1], tmphead = EdgeOrder[j+1].head, tmpend = EdgeOrder[j+1].end;
+                    edge[j+1] = edge[j], EdgeOrder[j+1].head = EdgeOrder[j].head, EdgeOrder[j+1].end = EdgeOrder[j].end;
+                    edge[j] = tmp, EdgeOrder[j].head = tmphead, EdgeOrder[j].end = tmpend;
+                }
+                order = false;
+            }
+        }
+    }
+    double MiniSpanTree_Kruskal( int vertexNum, int edgeNum ){
+        bool Select[MAXN];
+        int i, SelectCount;
+        double minsum;
+        sortEdge( edgeNum );
+        for(i=0; i<vertexNum; ++i) Select = false;
+        SelectCount = 0;
+        minsum = 0;
+        for(i=0; SelectCount<vertexNum-1 && i<edgeNum; ++i){
+            if( !(Select[EdgeOrder.head] && Select[EdgeOrder.end]) ){
+                Select[EdgeOrder.head] = Select[EdgeOrder[i].end] = true;
+                SelectCount++;
+                minsum += edge[i];
+            }
+        }
+        return minsum;
+    }
+}
