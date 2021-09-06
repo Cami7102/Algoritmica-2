@@ -1,0 +1,19 @@
+int bBRecursiva(int array[], int find, int iz, int der){
+    if (iz > der) return -1;
+ 
+    int indiceDeLaMitad = ((iz + der) / 2);
+ 
+    int valorQueEstaEnElMedio = array[indiceDeLaMitad];
+    if (find == valorQueEstaEnElMedio){
+        return indiceDeLaMitad;
+    }
+    
+    if (find < valorQueEstaEnElMedio){
+        // Entonces está hacia la izquierda
+        der = indiceDeLaMitad - 1;
+    }else{
+        // Está hacia la derecha
+        iz = indiceDeLaMitad + 1;
+    }
+    return bBRecursiva(array, find, iz, der);
+}
