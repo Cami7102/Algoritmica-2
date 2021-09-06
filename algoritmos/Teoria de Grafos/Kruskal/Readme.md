@@ -6,4 +6,10 @@ Primeramente ordenaremos las aristas del grafo por su peso de menor a mayor. Med
 ![image](https://user-images.githubusercontent.com/80707476/132235889-fc3e8196-4174-465d-b75e-aef1c98aa169.png)
 
 ## [Temas]
-- [Kruskal]
+
+- [Kruskal](https://github.com/Cami7102/Algoritmica-2/blob/main/algoritmos/Teoria%20de%20Grafos/Kruskal/Kruskal)
+
+## [Bibliografia]
+
+- [Arbol de expansion minima](https://jariasf.wordpress.com/2012/04/19/arbol-de-expansion-minima-algoritmo-de-kruskal/)
+- [Video](https://www.youtube.com/watch?v=3rrNH_AizMA)
