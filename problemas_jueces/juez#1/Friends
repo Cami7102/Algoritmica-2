@@ -1,0 +1,41 @@
+#include <bits/stdc++.h>
+#include <stdio.h>
+#include <string.h>
+using namespace std;
+
+int x, y, z, i, padre[30005], sum[30005], res;
+int a, b;
+
+int find(int x) {
+	if (x == padre[x])
+		return padre[x];
+	else
+		return find(padre[x]);
+}
+int main() {
+	scanf("%d", &x);
+	while (x --) {
+		res = 0;
+		scanf("%d%d", &y, &z);
+		for (i = 1; i <= y; i ++) {
+			padre[i] = i;
+			sum[i] = 1;
+		}
+		for (i = 0; i < z; i ++) {
+			scanf("%d%d", &a, &b);
+			int uno = find(a);
+			int dos = find(b);
+			if (uno != dos) {
+				padre[uno] = dos;
+				sum[dos] += sum[uno];
+				if (res < sum[dos])
+					res = sum[dos];
+			}
+		}
+        if (res == 0){
+            res = res + 1;
+        }
+		printf("%d\n", res);
+	}
+	return 0;
+}
