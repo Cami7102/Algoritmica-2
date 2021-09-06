@@ -1,0 +1,39 @@
+#include <bits/stdc++.h>
+#define input freopen("in.txt", "r", stdin)
+#define output freopen("out.txt", "w", stdout)
+#define length(x) (sizeof(x) / sizeof(x[0]))
+using namespace std;
+
+int query;  
+
+struct dom {     
+    int x;     
+    int h;     
+    int indice; 
+}bit[100000];  
+
+bool orden(dom a,dom b){    
+    return a.x < b.x; 
+}  
+
+int main() {    
+    query;     
+    cin >> query;     
+    for (int i = 0; i < query; i++){         
+        cin >> bit[i].x >> bit[i].h;         
+        bit[i].indice = i;     }     
+        int drop[query + 5] = {1};     
+        int ans[query + 5];      
+        sort(bit, bit + query, orden);          
+        for (int i = query-1, j; i >= 0; i--){         
+            for (j = i + 1; j < query && bit[i].x + bit[i].h-1 >= bit[j].x;){             
+                j += drop[j];         
+            }  
+            drop[i] = j - i;         
+            ans[bit[i].indice] = drop[i];     
+        }     
+        for (int i = 0; i < query; i++){         
+            cout << ans[i] << endl;     
+        }     
+    return 0; 
+}
