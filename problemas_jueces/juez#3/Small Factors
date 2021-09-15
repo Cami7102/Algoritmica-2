@@ -1,0 +1,21 @@
+#include <bits/stdc++.h> 
+using namespace std;
+
+const long long g = 0;
+long long x;
+long long c;
+vector<long long>number;
+
+int main(){
+    for(long long i = 0; i < g; i++){
+        for(long long k = 0; k < g; k++){
+        x = pow(2, i) * pow(3, k);
+        number.push_back(x);
+        }
+    }
+    sort(number.begin(), number.end());
+    while(cin>>c && c){
+        cout<<*lower_bound(number.begin(), number.end(), c)<<endl;
+    }
+    return 0;
+}
