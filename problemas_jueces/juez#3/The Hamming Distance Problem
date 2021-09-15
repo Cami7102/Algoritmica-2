@@ -1,0 +1,29 @@
+#include <bits/stdc++.h> 
+#define input freopen("in.txt", "r", stdin)
+#define output freopen("out.txt", "w", stdout)
+using namespace std;
+
+void solve(string cad, int L, int H){
+    if(cad.size() == L){
+        if(H == 0){
+            cout<<cad<<endl;
+            return;
+        }
+    }
+
+    solve("" + 1, L - 1, H - 1);
+    solve("" + 0, L - 1, H);
+}        
+
+int main(){
+    input;
+    output;
+
+    int tcases;
+    cin>>tcases;
+    while(tcases--){
+        int N, H;
+        cin>>N>>H;
+        solve("", N, H);
+    }  
+}
